@@ -42,8 +42,9 @@ public class StatsService {
         return minMonthNum + 1;
     }
 
-    public int getNumberOfMonthsInWhichSalesWereBelowAverage(long[] sales, long average) {
+    public int getNumberOfMonthsInWhichSalesWereBelowAverage(long[] sales) {
         int count = 0;
+        long average = calculateAverageAmountOfSalesPerMonth(sales);
         for (long sale : sales) {
             if (sale < average) {
                 count++;
@@ -52,8 +53,9 @@ public class StatsService {
         return count;
     }
 
-    public int getNumberOfMonthsInWhichSalesWereUpperAverage(long[] sales, long average) {
+    public int getNumberOfMonthsInWhichSalesWereUpperAverage(long[] sales) {
         int count = 0;
+        long average = calculateAverageAmountOfSalesPerMonth(sales);
         for (long sale : sales) {
             if (sale > average) {
                 count++;

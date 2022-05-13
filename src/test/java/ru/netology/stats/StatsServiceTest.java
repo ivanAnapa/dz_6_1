@@ -49,8 +49,7 @@ public class StatsServiceTest {
     @Test
     public void numberOfMonthsInWhichSalesWereBelowAverage() {
         StatsService statsService = new StatsService();
-        long averageAmount = statsService.calculateAverageAmountOfSalesPerMonth(sales);
-        int actualNumberOfMonths = statsService.getNumberOfMonthsInWhichSalesWereBelowAverage(sales, averageAmount);
+        int actualNumberOfMonths = statsService.getNumberOfMonthsInWhichSalesWereBelowAverage(sales);
         System.out.println("Количество месяцев, в которых продажи были ниже среднего: " + actualNumberOfMonths);
         Assertions.assertEquals(expectedNumberOfMonthsInWhichSalesWereBelowAverage, actualNumberOfMonths);
     }
@@ -58,8 +57,7 @@ public class StatsServiceTest {
     @Test
     public void numberOfMonthsInWhichSalesWereUpperAverage() {
         StatsService statsService = new StatsService();
-        long averageAmount = statsService.calculateAverageAmountOfSalesPerMonth(sales);
-        int actualNumberOfMonths = statsService.getNumberOfMonthsInWhichSalesWereUpperAverage(sales, averageAmount);
+        int actualNumberOfMonths = statsService.getNumberOfMonthsInWhichSalesWereUpperAverage(sales);
         System.out.println("Количество месяцев, в которых продажи были выше среднего: " + actualNumberOfMonths);
         Assertions.assertEquals(expectedNumberOfMonthsInWhichSalesWereUpperAverage, actualNumberOfMonths);
     }
